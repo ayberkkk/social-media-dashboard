@@ -1,0 +1,288 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+:root {
+  --bg: hsl(0deg, 0%, 100%);
+  --top-bg: hsl(225deg, 100%, 98%);
+  --card-bg: hsl(227deg, 47%, 96%);
+  --text1-bg: hsl(228deg, 12%, 44%);
+  --text2-bg: hsl(230deg, 17%, 14%);
+}
+
+[data-mode=dark] {
+  --bg: hsl(230deg, 17%, 14%);
+  --top-bg: hsl(232deg, 19%, 15%);
+  --card-bg: hsl(228deg, 28%, 20%);
+  --text1-bg: hsl(228deg, 34%, 66%);
+  --text2-bg: hsl(0deg, 0%, 100%);
+}
+
+[data-mode=light] {
+  --bg: hsl(0deg, 0%, 100%);
+  --top-bg: hsl(225deg, 100%, 98%);
+  --card-bg: hsl(227deg, 47%, 96%);
+  --text1-bg: hsl(228deg, 12%, 44%);
+  --text2-bg: hsl(230deg, 17%, 14%);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: hsl(230deg, 17%, 14%);
+    --top-bg: hsl(232deg, 19%, 15%);
+    --card-bg: hsl(228deg, 28%, 20%);
+    --text1-bg: hsl(228deg, 34%, 66%);
+    --text2-bg: hsl(0deg, 0%, 100%);
+  }
+}
+@media (prefers-color-scheme: light), (prefers-color-scheme: no-preference) {
+  :root {
+    --bg: hsl(0deg, 0%, 100%);
+    --top-bg: hsl(225deg, 100%, 98%);
+    --card-bg: hsl(227deg, 47%, 96%);
+    --text1-bg: hsl(228deg, 12%, 44%);
+    --text2-bg: hsl(230deg, 17%, 14%);
+  }
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: var(--bg);
+}
+
+p {
+  margin-bottom: 0px;
+}
+
+.up {
+  color: hsl(163deg, 72%, 41%);
+  margin-left: 5px;
+}
+
+.down {
+  color: hsl(348deg, 97%, 39%);
+  margin-left: 5px;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228deg, 45%, 44%);
+}
+
+.header-text {
+  color: var(--text2-bg);
+}
+.header-text .dashboard {
+  font-weight: 700;
+  letter-spacing: 5px;
+}
+.header-text .followes {
+  opacity: 0.8;
+}
+
+.d-l-mode {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text2-bg);
+}
+.d-l-mode p {
+  margin-right: 10px;
+  font-weight: 700;
+}
+.d-l-mode input[type=checkbox].input-switch {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+  position: relative;
+  width: 60px;
+  height: 34px;
+  border-radius: 34px;
+  background-color: #cccccc;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.d-l-mode input[type=checkbox].input-switch:before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 26px;
+  height: 26px;
+  margin: 4px;
+  background-color: #ffffff;
+  border-radius: 100%;
+  transition: all 0.3s ease-in-out;
+}
+.d-l-mode input[type=checkbox].input-switch:checked {
+  background: linear-gradient(90deg, #378fe6 0%, #3eda82 100%);
+}
+.d-l-mode input[type=checkbox].input-switch:checked:before {
+  transform: translateX(100%);
+}
+.d-l-mode input[type=checkbox].input-switch:disabled {
+  cursor: not-allowed;
+}
+
+.user ul {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+}
+.user ul .card {
+  padding: 50px;
+  gap: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  cursor: pointer;
+  transition: color 0.4s, background-color 0.4s;
+}
+.user ul .card:hover {
+  background-color: var(--top-bg);
+}
+.user ul .card hr {
+  height: 5px;
+  width: 100%;
+  margin: 0px;
+  position: absolute;
+  top: 0;
+  background: #111;
+  border: unset;
+}
+.user ul .card .user-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.user ul .card .user-link p {
+  color: var(--text2-bg);
+  font-weight: 700;
+  margin-left: 10px;
+  margin-bottom: 0px;
+}
+.user ul .card .followers-counter {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: var(--text2-bg);
+}
+.user ul .card .followers-counter .counter {
+  font-size: 60px;
+  font-weight: 700;
+}
+.user ul .card .followers-counter .text {
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 5px;
+  opacity: 0.8;
+}
+.user ul .card .days {
+  font-weight: 700;
+  color: var(--text2-bg);
+}
+.user ul .card .days img {
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.overview {
+  padding-top: 50px;
+}
+.overview .overview-text {
+  font-size: 18px;
+  color: var(--text2-bg);
+  font-weight: 700;
+  letter-spacing: 5px;
+  opacity: 0.5;
+  margin-bottom: 15px;
+  padding-left: 35px;
+  padding-right: 35px;
+}
+.overview ul {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+}
+.overview ul .card-ow {
+  padding: 30px;
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: color 0.4s, background-color 0.4s;
+}
+.overview ul .card-ow:hover {
+  background-color: var(--);
+}
+.overview ul .card-ow .left-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  gap: 30px;
+  color: var(--text2-bg);
+}
+.overview ul .card-ow .left-col .text {
+  font-size: 14px;
+  font-weight: 700;
+  opacity: 0.8;
+}
+.overview ul .card-ow .left-col .counter {
+  font-size: 40px;
+  font-weight: 700;
+}
+.overview ul .card-ow .right-col {
+  display: flex;
+  height: 100%;
+  gap: 10px;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: right;
+  color: var(--text2-bg);
+}
+.overview ul .card-ow .right-col .percent {
+  font-weight: 700;
+}
+.overview ul .card-ow .right-col img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  margin-right: 0;
+  margin-left: auto;
+}
+
+@media screen and (max-width: 992px) {
+  header ul {
+    padding-left: 0;
+  }
+  header ul .d-l-mode {
+    justify-content: space-between;
+  }
+  .user ul {
+    grid-template-columns: repeat(1, 1fr);
+    padding-left: 0px;
+  }
+  .overview ul {
+    grid-template-columns: repeat(1, 1fr);
+    padding-left: 0px;
+  }
+}/*# sourceMappingURL=main.css.map */
